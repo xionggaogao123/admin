@@ -15,7 +15,6 @@ import java.util.List;
 
 /**
  * @author Jonsy
- *
  */
 @Service
 @CacheConfig(cacheNames = "menulist")
@@ -69,9 +68,7 @@ public class MenuService {
         return list;
     }
 
-    @Caching(
-            evict = {@CacheEvict(key = "'list'"), @CacheEvict(key = "#menu"), @CacheEvict(value = "user-nav-menu", allEntries = true)}
-    )
+    @Caching(evict = {@CacheEvict(key = "'list'"), @CacheEvict(key = "#menu"), @CacheEvict(value = "user-nav-menu", allEntries = true)})
     public void switchStatus(String menu, boolean disable) {
         menuRepository.switchStatus(menu, disable);
     }

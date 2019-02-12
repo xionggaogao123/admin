@@ -8,20 +8,19 @@ import com.admin.interfaces.facade.commondobject.MenuUpdateCommond;
 
 /**
  * @author Jonsy
- *
  */
 public class MenuAssembler {
 
     public static Menu updateCommendToDomain(String id, MenuUpdateCommond updateCommond) {
-        Menu menu=new Menu();
-      BeanUtil.copeProperties(updateCommond,menu);
+        Menu menu = new Menu();
+        BeanUtil.copeProperties(updateCommond, menu);
         menu.setId(id);
         return menu;
     }
 
-    public static Menu createCommendToDomain(MenuCreateCommand creteCommand){
-        Menu menu=new Menu();
-        BeanUtil.copeProperties(creteCommand,menu);
+    public static Menu createCommendToDomain(MenuCreateCommand creteCommand) {
+        Menu menu = new Menu();
+        BeanUtil.copeProperties(creteCommand, menu);
         return menu;
     }
 }
